@@ -28,13 +28,13 @@ auth_users = [int(user) if id_pattern.search(user) else user for user in environ
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_channel = environ.get('AUTH_CHANNEL')
 auth_grp = environ.get('AUTH_GROUP')
-AUTH_CHANNEL = environ.get('AUTH_CHANNEL')
+AUTH_CHANNEL = environ.get('AUTH_CHANNEL','-1001882240676')
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "")
-DATABASE_NAME = environ.get('DATABASE_NAME', "Anurag")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Anurag_files')
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://stautofilesbot:stautofilesbot@cluster0.gok4b.mongodb.net/?retryWrites=true&w=majority")
+DATABASE_NAME = environ.get('DATABASE_NAME', "stautofilesbot")
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'ST_')
 
 # Others
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', ''))
